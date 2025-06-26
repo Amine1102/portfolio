@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import mock01 from '../assets/images/mock01.png';
-import mock02 from '../assets/images/mock02.png';
-import mock03 from '../assets/images/mock03.png';
 import mock04 from '../assets/images/mock04.png';
 import mock05 from '../assets/images/mock05.png';
 import mock06 from '../assets/images/mock06.png';
@@ -9,78 +6,115 @@ import mock07 from '../assets/images/mock07.png';
 import mock08 from '../assets/images/mock08.png';
 import mock09 from '../assets/images/mock09.png';
 import mock10 from '../assets/images/mock10.png';
-import SOCProject from './SOCProject';
+import hackthebox from '../assets/images/hackthebox.png';
 import '../assets/styles/Project.scss';
+import SOCProject from './SOCProject';
+import HTBCertifications from './HTBCertifications'; // Add this import
 
-function Project({ onViewProject }: { onViewProject?: (view: string) => void }) {
-    const [showSOCProject, setShowSOCProject] = useState(false);
+function Project() {
+    const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
-    const handleSOCProjectClick = () => {
-        if (onViewProject) {
-            onViewProject('soc-project');
-        } else {
-            setShowSOCProject(true);
-        }
+    const handleProjectClick = (projectName: string) => {
+        setSelectedProject(projectName);
     };
 
     const handleBackToProjects = () => {
-        setShowSOCProject(false);
+        setSelectedProject(null);
     };
 
-    if (showSOCProject) {
+    // If a project is selected, show the detailed view
+    if (selectedProject === 'soc') {
         return <SOCProject onBack={handleBackToProjects} />;
     }
 
-    return(
-    <div className="projects-container" id="projects">
-        <h1>Personal Projects</h1>
-        <div className="projects-grid">
+    // Add this condition for HTB
+    if (selectedProject === 'htb') {
+        return <HTBCertifications onBack={handleBackToProjects} />;
+    }
 
-            <div className="project">
-                <button onClick={handleSOCProjectClick} className="project-button">
-                    <img src={mock10} className="zoom" alt="thumbnail" width="100%"/>
-                </button>
-                <button onClick={handleSOCProjectClick} className="project-title-button">
-                    <h2>Homelab SOC</h2>
-                </button>
-                <p>Developed a small SOC using Azure.</p>
-                <button onClick={handleSOCProjectClick} className="view-details-link">
-                    View Details →
-                </button>
-            </div>
-            
-            <div className="project">
-                <a href="https://yujisatojr.itch.io/highspeedchase" target="_blank" rel="noreferrer"><img src={mock09} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://yujisatojr.itch.io/highspeedchase" target="_blank" rel="noreferrer"><h2>High Speed Chase</h2></a>
-                <p>Designed, developed, and launched a 3D multiplayer racing game with C# and Unity. This is available on Itch.io for gamers worldwide to enjoy.</p>
-            </div>
-            <div className="project">
-                <a href="https://yujisatojr.itch.io/spacecraft" target="_blank" rel="noreferrer"><img src={mock08} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://yujisatojr.itch.io/spacecraft" target="_blank" rel="noreferrer"><h2>Astro Raiders</h2></a>
-                <p>Developed and released a 2D shooting game with C# and Unity. This project is hosted on the Itch.io public marketplace.</p>
-            </div>
-            <div className="project">
-                <a href="https://www.datumlearn.com/" target="_blank" rel="noreferrer"><img src={mock07} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://www.datumlearn.com/" target="_blank" rel="noreferrer"><h2>Datum: Integrated Learning Platform</h2></a>
-                <p>This is an online educational platform that provides high-quality, data science-focused learning resources in the Japanese language. I created the entire platform from scratch using Ruby on Rails.</p>
-            </div>
-            <div className="project">
-                <a href="http://www.wemanage.jp/" target="_blank" rel="noreferrer"><img src={mock06} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="http://www.wemanage.jp/" target="_blank" rel="noreferrer"><h2>WeManage: Real Estate Asset Management</h2></a>
-                <p>This mobile application allows realtors in Japan to securely manage their property information and view future income predictions. This app is built with Ruby on Rails and JavaScript.</p>
-            </div>
-            <div className="project">
-                <a href="https://www.byuh.edu/covid-19-case-management" target="_blank" rel="noreferrer"><img src={mock05} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://www.byuh.edu/covid-19-case-management" target="_blank" rel="noreferrer"><h2>COVID-19 Case Management</h2></a>
-                <p>Built official charts for COVID/vaccination tracking for an educational institution using JavaScript and the Google Sheets API v4. The dashboard served the university's leadership in their decision-making processes.</p>
-            </div>
-            <div className="project">
-                <a href="https://github.com/yujisatojr/multi-reg-analysis" target="_blank" rel="noreferrer"><img src={mock04} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://github.com/yujisatojr/multi-reg-analysis" target="_blank" rel="noreferrer"><h2>Multiple Regression Property Analysis</h2></a>
-                <p>Analyzed the real estate market in Japan and predicted property prices by implementing statistical methods such as OLS and multi-regression analysis. This project leveraged Python and various libraries such as Pandas, NumPy, Matplotlib, and Scikit-Learn.</p>
+    // Default projects grid view
+    return (
+        <div className="projects-container" id="projects">
+            <h1>Personal Projects</h1>
+            <div className="projects-grid">
+                {/* Existing SOC Project */}
+                <div className="project">
+                    <button 
+                        className="project-button"
+                        onClick={() => handleProjectClick('soc')}
+                    >
+                        <img src={mock10} className="zoom" alt="thumbnail" width="100%" />
+                        <button 
+                            className="project-title-button"
+                            onClick={() => handleProjectClick('soc')}
+                        >
+                            <h2>Azure SOC with Live Attack Monitoring</h2>
+                        </button>
+                        <p>Built a Security Operations Center in Azure with real-time attack visualization and SIEM integration.</p>
+                        <button 
+                            className="view-details-link"
+                            onClick={() => handleProjectClick('soc')}
+                        >
+                            View Details
+                        </button>
+                    </button>
+                </div>
+
+                {/* New HTB Certifications Project */}
+                <div className="project">
+                    <button 
+                        className="project-button"
+                        onClick={() => handleProjectClick('htb')}
+                    >
+                        <img src={hackthebox} className="zoom" alt="thumbnail" width="100%" />
+                        <button 
+                            className="project-title-button"
+                            onClick={() => handleProjectClick('htb')}
+                        >
+                            <h2>Hack The Box Certifications</h2>
+                        </button>
+                        <p>CBBH and CDSA certifications with hands-on penetration testing and defensive security skills.</p>
+                        <button 
+                            className="view-details-link"
+                            onClick={() => handleProjectClick('htb')}
+                        >
+                            View Details
+                        </button>
+                    </button>
+                </div>
+
+                {/* Keep your other existing projects */}
+                <div className="project">
+                    <img src={mock05} className="zoom" alt="thumbnail" width="100%" />
+                    <h2>Movie App</h2>
+                    <p>Designed and coded a ReactJS movie application. Users can search for specific movies, add movies to their favorites list and view movie information and movie trailers.</p>
+                </div>
+
+                <div className="project">
+                    <img src={mock06} className="zoom" alt="thumbnail" width="100%" />
+                    <h2>Bell Canada Network Management Web Application</h2>
+                    <p>Designed and coded a ReactJS web application for viewing and editing charts, visualizing network data, and managing equipment and devices for Bell Canada.</p>
+                </div>
+
+                <div className="project">
+                    <img src={mock07} className="zoom" alt="thumbnail" width="100%" />
+                    <h2>Poker Project</h2>
+                    <p>Designed and coded a C++ project that determines which poker player wins a round.</p>
+                </div>
+
+                <div className="project">
+                    <img src={mock08} className="zoom" alt="thumbnail" width="100%" />
+                    <h2>Databasing Project</h2>
+                    <p>Designed and coded a MySQL practice database to store and retrieve data.</p>
+                </div>
+
+                <div className="project">
+                    <img src={mock09} className="zoom" alt="thumbnail" width="100%" />
+                    <h2>Speedrun Tracker Tool</h2>
+                    <p>Designed and coded a C# application that tracks race times on a daily basis, analyzes average time, and compares times with history.</p>
+                </div>
             </div>
         </div>
-    </div>
     );
 }
 
