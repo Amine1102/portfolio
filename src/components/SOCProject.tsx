@@ -246,22 +246,18 @@ SecurityEvent
                         >
                             📁 View Repository
                         </a>
-                        <a 
-                            href="#" 
-                            target="_blank" 
-                            rel="noreferrer" 
+                        <button 
                             className="project-link-button secondary"
+                            onClick={() => alert('Dashboard link coming soon')}
                         >
                             📊 Live Dashboard
-                        </a>
-                        <a 
-                            href="#" 
-                            target="_blank" 
-                            rel="noreferrer" 
+                        </button>
+                        <button 
                             className="project-link-button tertiary"
+                            onClick={() => alert('Documentation link coming soon')}
                         >
                             📋 Documentation
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
