@@ -1,61 +1,68 @@
 import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faDocker, faPython } from '@fortawesome/free-brands-svg-icons';
+import { faShieldAlt, faCode, faNetworkWired } from '@fortawesome/free-solid-svg-icons';
 import Chip from '@mui/material/Chip';
+import { useLanguage } from '../contexts/LanguageContext';
 import '../assets/styles/Expertise.scss';
 
 // Expertise component to showcase skills and technologies used
 // It includes three main sections with icons, titles, descriptions, and technology labels
 
 const labelsFirst = [
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "HTML5",
-    "CSS3",
-    "SASS",
-    "Flask",
-    "Python",
-    "SQL",
-    "PostgreSQL",
-    "Postman"
+    "Azure Sentinel",
+    "SIEM",
+    "Wireshark",
+    "Nmap",
+    "Metasploit",
+    "Burp Suite",
+    "Kali Linux",
+    "Windows Server",
+    "Active Directory",
+    "TryHackMe",
+    "HackTheBox"
 ];
 
 const labelsSecond = [
+    "Symfony",
+    "PHP",
+    "Python",
+    "Java",
+    "JavaScript",
+    "HTML/CSS",
     "Git",
-    "GitHub Actions",
-    "Docker",
-    "AWS",
-    "Azure",
+    "Bash",
     "Linux",
-    "Snowflake",
-    "Pandas",
-    "Selenium",
+    "MySQL"
 ];
 
 const labelsThird = [
-    "OpenAI",
-    "Groq",
-    "LangChain",
-    "Qdrant",
-    "Hugging Face",
-    "LlamaIndex",
-    "Streamlit",
+    "Cisco Catalyst",
+    "TCP/IP",
+    "DNS",
+    "DHCP",
+    "VPN",
+    "Firewall",
+    "Network Monitoring",
+    "Virtualization",
+    "Azure",
+    "Windows Server"
 ];
 
 function Expertise() {
+    const { t } = useLanguage();
+    
     return (
     <div className="container" id="expertise">
         <div className="skills-container">
-            <h1>Expertise</h1>
+            <h1>{t('skills.title')}</h1>
             <div className="skills-grid">
                 <div className="skill">
-                    <FontAwesomeIcon icon={faReact} size="3x"/>
-                    <h3>Cybersecurity</h3>
-                    <p>I have built a diverse skillset using TryHackMe, HackTheBox, .....</p>
+                    <FontAwesomeIcon icon={faShieldAlt} size="3x"/>
+                    <h3>{t('skills.cyber.title')}</h3>
+                    <p>{t('skills.cyber.description')}</p>
                     <div className="flex-chips">
-                        <span className="chip-title">Tech used:</span>
+                        <span className="chip-title">{t('skills.techUsed')}</span>
                         {labelsFirst.map((label, index) => (
                             <Chip key={index} className='chip' label={label} />
                         ))}
@@ -63,11 +70,11 @@ function Expertise() {
                 </div>
 
                 <div className="skill">
-                    <FontAwesomeIcon icon={faDocker} size="3x"/>
-                    <h3>Blabla 2</h3>
-                    <p>I have built a diverse Blabbababababa.</p>
+                    <FontAwesomeIcon icon={faCode} size="3x"/>
+                    <h3>{t('skills.dev.title')}</h3>
+                    <p>{t('skills.dev.description')}</p>
                     <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
+                        <span className="chip-title">{t('skills.techStack')}</span>
                         {labelsSecond.map((label, index) => (
                             <Chip key={index} className='chip' label={label} />
                         ))}
@@ -75,11 +82,11 @@ function Expertise() {
                 </div>
 
                 <div className="skill">
-                    <FontAwesomeIcon icon={faPython} size="3x"/>
-                    <h3>Blabla 3</h3>
-                    <p>I have built a diverse Blabbababababa.</p>
+                    <FontAwesomeIcon icon={faNetworkWired} size="3x"/>
+                    <h3>{t('skills.network.title')}</h3>
+                    <p>{t('skills.network.description')}</p>
                     <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
+                        <span className="chip-title">{t('skills.techStack')}</span>
                         {labelsThird.map((label, index) => (
                             <Chip key={index} className='chip' label={label} />
                         ))}

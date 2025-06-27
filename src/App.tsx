@@ -9,6 +9,7 @@ import {
   Footer,
 } from "./components";
 import FadeIn from './components/FadeIn';
+import { LanguageProvider } from './contexts/LanguageContext';
 import './index.scss';
 
 function App() {
@@ -27,17 +28,19 @@ function App() {
       }, []);
 
     return (
-      <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
-        <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
-        <FadeIn transitionDuration={700}>
-            <Main/>
-            <Expertise/>
-            <Timeline/>
-            <Project/>
-            <Contact/>
-        </FadeIn>
-        <Footer />
-      </div>
+      <LanguageProvider>
+        <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
+          <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
+          <FadeIn transitionDuration={700}>
+              <Main/>
+              <Expertise/>
+              <Timeline/>
+              <Project/>
+              <Contact/>
+          </FadeIn>
+          <Footer />
+        </div>
+      </LanguageProvider>
     );
 }
 

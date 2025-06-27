@@ -1,0 +1,44 @@
+.language-toggle {
+  background: transparent;
+  border: 2px solid var(--text-color, #fff);
+  color: var(--text-color, #fff);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 50px;
+
+  &:hover {
+    background: var(--text-color, #fff);
+    color: var(--bg-color, #000);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Dark mode support
+.dark-mode .language-toggle {
+  border-color: #fff;
+  color: #fff;
+
+  &:hover {
+    background: #fff;
+    color: #000;
+  }
+}
+
+// Light mode support
+.light-mode .language-toggle {
+  border-color: #000;
+  color: #000;
+
+  &:hover {
+    background: #000;
+    color: #fff;
+  }
+}

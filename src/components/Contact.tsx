@@ -5,9 +5,11 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import TextField from '@mui/material/TextField';
+import { useLanguage } from '../contexts/LanguageContext';
 
 function Contact() {
-
+  const { t } = useLanguage();
+  
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
@@ -53,8 +55,8 @@ function Contact() {
     <div id="contact">
       <div className="items-container">
         <div className="contact_wrapper">
-          <h1>Contact Me</h1>
-          <p></p>
+          <h1>{t('contact.title')}</h1>
+          <p>{t('contact.description')}</p>
           <Box
             ref={form}
             component="form"

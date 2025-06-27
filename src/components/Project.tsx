@@ -9,10 +9,12 @@ import mock10 from '../assets/images/mock10.png';
 import hackthebox from '../assets/images/hackthebox.png';
 import '../assets/styles/Project.scss';
 import SOCProject from './SOCProject';
-import HTBCertifications from './HTBCertifications'; // Add this import
+import HTBCertifications from './HTBCertifications';
+import { useLanguage } from '../contexts/LanguageContext';
 
 function Project() {
     const [selectedProject, setSelectedProject] = useState<string | null>(null);
+    const { t } = useLanguage();
 
     const handleProjectClick = (projectName: string) => {
         setSelectedProject(projectName);
@@ -35,7 +37,7 @@ function Project() {
     // Default projects grid view
     return (
         <div className="projects-container" id="projects">
-            <h1>Personal Projects</h1>
+            <h1>{t('projects.title')}</h1>
             <div className="projects-grid">
                 {/* Existing SOC Project */}
                 <div className="project">
@@ -48,14 +50,14 @@ function Project() {
                             className="project-title-button"
                             onClick={() => handleProjectClick('soc')}
                         >
-                            <h2>Azure SOC with Live Attack Monitoring</h2>
+                            <h2>{t('projects.soc.title')}</h2>
                         </button>
-                        <p>Built a Security Operations Center in Azure with real-time attack visualization and SIEM integration.</p>
+                        <p>{t('projects.soc.description')}</p>
                         <button 
                             className="view-details-link"
                             onClick={() => handleProjectClick('soc')}
                         >
-                            View Details
+                            {t('projects.viewDetails')}
                         </button>
                     </button>
                 </div>
@@ -71,14 +73,14 @@ function Project() {
                             className="project-title-button"
                             onClick={() => handleProjectClick('htb')}
                         >
-                            <h2>Hack The Box Certifications</h2>
+                            <h2>{t('projects.htb.title')}</h2>
                         </button>
-                        <p>CBBH and CDSA certifications with hands-on penetration testing and defensive security skills.</p>
+                        <p>{t('projects.htb.description')}</p>
                         <button 
                             className="view-details-link"
                             onClick={() => handleProjectClick('htb')}
                         >
-                            View Details
+                            {t('projects.viewDetails')}
                         </button>
                     </button>
                 </div>

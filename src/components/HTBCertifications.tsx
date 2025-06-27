@@ -1,7 +1,10 @@
 import React from "react";
+import { useLanguage } from '../contexts/LanguageContext';
 import '../assets/styles/ProjectDetail.scss';
 
 function HTBCertifications({ onBack }: { onBack?: () => void }) {
+    const { t } = useLanguage();
+    
     const handleBackClick = () => {
         if (onBack) {
             onBack();
@@ -17,9 +20,9 @@ function HTBCertifications({ onBack }: { onBack?: () => void }) {
                     className="back-button" 
                     onClick={handleBackClick}
                 >
-                    ← Back to Projects
+                    {t('htb.backButton')}
                 </button>
-                <h1>Hack The Box Certifications & Achievements</h1>
+                <h1>{t('htb.title')}</h1>
                 <div className="project-badges">
                     <span className="badge">Penetration Testing</span>
                     <span className="badge">Bug Bounty</span>
@@ -31,140 +34,134 @@ function HTBCertifications({ onBack }: { onBack?: () => void }) {
             <div className="project-detail-content">
                 <div className="project-info-section">
                     <div className="project-overview">
-                        <h2>🎯 Hack The Box Journey</h2>
+                        <h2>{t('htb.overview.title')}</h2>
                         <p>
-                            Actively engaged in Hack The Box's comprehensive cybersecurity training platform, 
-                            pursuing industry-recognized certifications that validate hands-on penetration testing 
-                            and defensive security skills. HTB provides real-world scenarios and vulnerable machines 
-                            that simulate actual enterprise environments, offering practical experience beyond 
-                            theoretical knowledge.
+                            {t('htb.overview.description')}
                         </p>
                     </div>
 
                     <div className="project-details">
                         <div className="detail-section">
-                            <h3>🏆 Certifications</h3>
+                            <h3>{t('htb.certifications.title')}</h3>
                             
                             <div className="certification-item">
-                                <h4>🐛 CBBH - Certified Bug Bounty Hunter</h4>
-                                <p><strong>Status:</strong> In Progress / Completed</p>
-                                <p><strong>Focus Areas:</strong></p>
+                                <h4>{t('htb.cbbh.title')}</h4>
+                                <p><strong>{t('htb.cbbh.status')}</strong></p>
+                                <p><strong>{t('htb.cbbh.focus')}</strong></p>
                                 <ul>
-                                    <li>Web Application Security Testing</li>
-                                    <li>OWASP Top 10 Vulnerabilities</li>
-                                    <li>SQL Injection & Cross-Site Scripting (XSS)</li>
-                                    <li>Authentication & Authorization Bypasses</li>
-                                    <li>Server-Side Request Forgery (SSRF)</li>
-                                    <li>File Upload Vulnerabilities</li>
-                                    <li>API Security Testing</li>
-                                    <li>Bug Bounty Methodology & Reporting</li>
+                                    <li>{t('htb.cbbh.skill.1')}</li>
+                                    <li>{t('htb.cbbh.skill.2')}</li>
+                                    <li>{t('htb.cbbh.skill.3')}</li>
+                                    <li>{t('htb.cbbh.skill.4')}</li>
+                                    <li>{t('htb.cbbh.skill.5')}</li>
+                                    <li>{t('htb.cbbh.skill.6')}</li>
+                                    <li>{t('htb.cbbh.skill.7')}</li>
+                                    <li>{t('htb.cbbh.skill.8')}</li>
                                 </ul>
                             </div>
 
                             <div className="certification-item">
-                                <h4>🛡️ CDSA - Certified Defensive Security Analyst</h4>
-                                <p><strong>Status:</strong> In Progress / Completed</p>
-                                <p><strong>Focus Areas:</strong></p>
+                                <h4>{t('htb.cdsa.title')}</h4>
+                                <p><strong>{t('htb.cdsa.status')}</strong></p>
+                                <p><strong>{t('htb.cdsa.focus')}</strong></p>
                                 <ul>
-                                    <li>Security Information & Event Management (SIEM)</li>
-                                    <li>Incident Response & Digital Forensics</li>
-                                    <li>Threat Hunting & Analysis</li>
-                                    <li>Malware Analysis & Reverse Engineering</li>
-                                    <li>Network Traffic Analysis</li>
-                                    <li>Log Analysis & Correlation</li>
-                                    <li>Threat Intelligence Integration</li>
-                                    <li>Security Operations Center (SOC) Procedures</li>
+                                    <li>{t('htb.cdsa.skill.1')}</li>
+                                    <li>{t('htb.cdsa.skill.2')}</li>
+                                    <li>{t('htb.cdsa.skill.3')}</li>
+                                    <li>{t('htb.cdsa.skill.4')}</li>
+                                    <li>{t('htb.cdsa.skill.5')}</li>
+                                    <li>{t('htb.cdsa.skill.6')}</li>
+                                    <li>{t('htb.cdsa.skill.7')}</li>
+                                    <li>{t('htb.cdsa.skill.8')}</li>
                                 </ul>
                             </div>
                         </div>
 
                         <div className="detail-section">
-                            <h3>🎮 Platform Achievements</h3>
+                            <h3>{t('htb.achievements.title')}</h3>
                             <div className="achievements-grid">
                                 <div className="achievement-category">
-                                    <h4>Machines Owned</h4>
+                                    <h4>{t('htb.machines.title')}</h4>
                                     <ul>
-                                        <li><strong>Easy Machines:</strong> X completed</li>
-                                        <li><strong>Medium Machines:</strong> X completed</li>
-                                        <li><strong>Hard Machines:</strong> X completed</li>
-                                        <li><strong>Insane Machines:</strong> X completed</li>
+                                        <li><strong>{t('htb.machines.easy')}</strong></li>
+                                        <li><strong>{t('htb.machines.medium')}</strong></li>
+                                        <li><strong>{t('htb.machines.hard')}</strong></li>
+                                        <li><strong>{t('htb.machines.insane')}</strong></li>
                                     </ul>
                                 </div>
                                 <div className="achievement-category">
-                                    <h4>Skill Development</h4>
+                                    <h4>{t('htb.skill.title')}</h4>
                                     <ul>
-                                        <li><strong>Current Rank:</strong> [Your HTB Rank]</li>
-                                        <li><strong>Points Earned:</strong> [Your Points]</li>
-                                        <li><strong>Badges Unlocked:</strong> [Number] badges</li>
-                                        <li><strong>Active Since:</strong> [Date]</li>
+                                        <li><strong>{t('htb.skill.rank')}</strong></li>
+                                        <li><strong>{t('htb.skill.points')}</strong></li>
+                                        <li><strong>{t('htb.skill.badges')}</strong></li>
+                                        <li><strong>{t('htb.skill.active')}</strong></li>
                                     </ul>
                                 </div>
                                 <div className="achievement-category">
-                                    <h4>Specialized Tracks</h4>
+                                    <h4>{t('htb.tracks.title')}</h4>
                                     <ul>
-                                        <li>Web Application Penetration Testing</li>
-                                        <li>Active Directory Exploitation</li>
-                                        <li>Buffer Overflow Techniques</li>
-                                        <li>Privilege Escalation Methods</li>
+                                        <li>{t('htb.tracks.1')}</li>
+                                        <li>{t('htb.tracks.2')}</li>
+                                        <li>{t('htb.tracks.3')}</li>
+                                        <li>{t('htb.tracks.4')}</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
                         <div className="detail-section">
-                            <h3>💻 Technical Skills Demonstrated</h3>
+                            <h3>{t('htb.skills.title')}</h3>
                             <div className="tech-grid">
                                 <div className="tech-category">
-                                    <h4>Penetration Testing</h4>
+                                    <h4>{t('htb.tech.pentest.title')}</h4>
                                     <ul>
-                                        <li>Nmap & Network Reconnaissance</li>
-                                        <li>Burp Suite Professional</li>
-                                        <li>Metasploit Framework</li>
-                                        <li>Custom Exploit Development</li>
-                                        <li>Privilege Escalation Techniques</li>
+                                        <li>{t('htb.tech.pentest.1')}</li>
+                                        <li>{t('htb.tech.pentest.2')}</li>
+                                        <li>{t('htb.tech.pentest.3')}</li>
+                                        <li>{t('htb.tech.pentest.4')}</li>
+                                        <li>{t('htb.tech.pentest.5')}</li>
                                     </ul>
                                 </div>
                                 <div className="tech-category">
-                                    <h4>Defensive Security</h4>
+                                    <h4>{t('htb.tech.defensive.title')}</h4>
                                     <ul>
-                                        <li>Wireshark Packet Analysis</li>
-                                        <li>Splunk SIEM Operations</li>
-                                        <li>Volatility Memory Forensics</li>
-                                        <li>YARA Rule Development</li>
-                                        <li>Incident Response Procedures</li>
+                                        <li>{t('htb.tech.defensive.1')}</li>
+                                        <li>{t('htb.tech.defensive.2')}</li>
+                                        <li>{t('htb.tech.defensive.3')}</li>
+                                        <li>{t('htb.tech.defensive.4')}</li>
+                                        <li>{t('htb.tech.defensive.5')}</li>
                                     </ul>
                                 </div>
                                 <div className="tech-category">
-                                    <h4>Programming & Scripting</h4>
+                                    <h4>{t('htb.tech.programming.title')}</h4>
                                     <ul>
-                                        <li>Python for Security Automation</li>
-                                        <li>PowerShell for Windows Security</li>
-                                        <li>Bash Scripting for Linux</li>
-                                        <li>SQL for Database Testing</li>
-                                        <li>JavaScript for Web Security</li>
+                                        <li>{t('htb.tech.programming.1')}</li>
+                                        <li>{t('htb.tech.programming.2')}</li>
+                                        <li>{t('htb.tech.programming.3')}</li>
+                                        <li>{t('htb.tech.programming.4')}</li>
+                                        <li>{t('htb.tech.programming.5')}</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
                         <div className="detail-section">
-                            <h3>📚 Key Learning Outcomes</h3>
+                            <h3>{t('htb.learning.title')}</h3>
                             <ul>
-                                <li><strong>Real-World Application:</strong> Applied theoretical knowledge to practical scenarios</li>
-                                <li><strong>Problem-Solving:</strong> Developed systematic approach to security challenges</li>
-                                <li><strong>Methodology:</strong> Learned industry-standard testing methodologies</li>
-                                <li><strong>Reporting Skills:</strong> Created professional security assessment reports</li>
-                                <li><strong>Continuous Learning:</strong> Stayed current with latest attack vectors and defenses</li>
-                                <li><strong>Ethical Hacking:</strong> Understood legal and ethical boundaries in security testing</li>
+                                <li><strong>{t('htb.learning.1')}</strong></li>
+                                <li><strong>{t('htb.learning.2')}</strong></li>
+                                <li><strong>{t('htb.learning.3')}</strong></li>
+                                <li><strong>{t('htb.learning.4')}</strong></li>
+                                <li><strong>{t('htb.learning.5')}</strong></li>
+                                <li><strong>{t('htb.learning.6')}</strong></li>
                             </ul>
                         </div>
 
                         <div className="detail-section">
-                            <h3>🔗 Portfolio Integration</h3>
+                            <h3>{t('htb.integration.title')}</h3>
                             <p>
-                                The skills gained through Hack The Box directly complement my other cybersecurity projects, 
-                                including the Azure SOC Lab and vulnerability assessment work. This hands-on experience 
-                                provides the practical foundation needed for effective security operations and penetration testing roles.
+                                {t('htb.integration.text')}
                             </p>
                         </div>
                     </div>

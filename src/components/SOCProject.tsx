@@ -1,8 +1,11 @@
 import React from "react";
 import mock10 from '../assets/images/mock10.png';
+import { useLanguage } from '../contexts/LanguageContext';
 import '../assets/styles/ProjectDetail.scss';
 
 function SOCProject({ onBack }: { onBack?: () => void }) {
+    const { t } = useLanguage();
+    
     const handleBackClick = () => {
         if (onBack) {
             onBack();
@@ -18,9 +21,9 @@ function SOCProject({ onBack }: { onBack?: () => void }) {
                     className="back-button" 
                     onClick={handleBackClick}
                 >
-                    ← Back to Projects
+                    {t('soc.backButton')}
                 </button>
-                <h1>Azure Homelab SOC with Live Attack Monitoring</h1>
+                <h1>{t('soc.title')}</h1>
                 <div className="project-badges">
                     <span className="badge">Cybersecurity</span>
                     <span className="badge">Azure</span>
@@ -36,113 +39,109 @@ function SOCProject({ onBack }: { onBack?: () => void }) {
 
                 <div className="project-info-section">
                     <div className="project-overview">
-                        <h2>🛡️ Project Overview</h2>
+                        <h2>{t('soc.overview.title')}</h2>
                         <p>
-                            Built a fully functional Security Operations Center from scratch using Microsoft Azure. 
-                            This hands-on cybersecurity project demonstrates real-world threat detection capabilities by creating an 
-                            intentionally vulnerable Windows 10 honeypot VM that attracted over <strong>26,000+ failed login attempts</strong> 
-                            from attackers worldwide within 24 hours. The project showcases end-to-end SIEM implementation, log analysis, 
-                            and geospatial threat visualization using enterprise-grade security tools.
+                            {t('soc.overview.description')}
                         </p>
                     </div>
 
                     <div className="project-details">
                         <div className="detail-section">
-                            <h3>🎯 Project Objectives</h3>
+                            <h3>{t('soc.objectives.title')}</h3>
                             <ul>
-                                <li>Create a vulnerable VM as a honeypot to attract real attacks</li>
-                                <li>Set up centralized logging and monitoring infrastructure</li>
-                                <li>Implement SIEM capabilities using Microsoft Sentinel</li>
-                                <li>Analyze and visualize real-world attack patterns</li>
-                                <li>Build interactive dashboards for threat intelligence</li>
+                                <li>{t('soc.objectives.1')}</li>
+                                <li>{t('soc.objectives.2')}</li>
+                                <li>{t('soc.objectives.3')}</li>
+                                <li>{t('soc.objectives.4')}</li>
+                                <li>{t('soc.objectives.5')}</li>
                             </ul>
                         </div>
 
                         <div className="detail-section">
-                            <h3>🚨 Real Attack Statistics</h3>
+                            <h3>{t('soc.stats.title')}</h3>
                             <ul>
-                                <li><strong>Attack Volume:</strong> 26,000+ failed RDP login attempts from Poland alone</li>
-                                <li><strong>Geographic Spread:</strong> 13,300+ attempts from Belgium, 13,300+ from South America</li>
-                                <li><strong>Discovery Speed:</strong> VM discovered and attacked within minutes of deployment</li>
-                                <li><strong>Attack Rate:</strong> 400+ attempts per minute during peak activity</li>
-                                <li><strong>Common Attack Vectors:</strong> RDP brute force (Event ID 4625)</li>
-                                <li><strong>Attacker Usernames:</strong> admin, administrator, user, employee (most common)</li>
+                                <li><strong>{t('soc.stats.1')}</strong></li>
+                                <li><strong>{t('soc.stats.2')}</strong></li>
+                                <li><strong>{t('soc.stats.3')}</strong></li>
+                                <li><strong>{t('soc.stats.4')}</strong></li>
+                                <li><strong>{t('soc.stats.5')}</strong></li>
+                                <li><strong>{t('soc.stats.6')}</strong></li>
                             </ul>
                         </div>
 
                         <div className="detail-section">
-                            <h3>🔧 Architecture & Setup</h3>
+                            <h3>{t('soc.architecture.title')}</h3>
                             <ul>
-                                <li><strong>Azure VM:</strong> Windows 10 virtual machine exposed to internet</li>
-                                <li><strong>Honeypot Configuration:</strong> Disabled firewall, enabled RDP</li>
-                                <li><strong>Log Analytics Workspace:</strong> Central log collection point</li>
-                                <li><strong>Microsoft Sentinel:</strong> Cloud-native SIEM solution</li>
-                                <li><strong>PowerShell Scripts:</strong> Custom log parsing and geolocation</li>
-                                <li><strong>KQL Queries:</strong> Advanced threat hunting and analysis</li>
+                                <li><strong>Azure VM:</strong> {t('soc.architecture.azurevm')}</li>
+                                <li><strong>Honeypot Configuration:</strong> {t('soc.architecture.honeypot')}</li>
+                                <li><strong>Log Analytics Workspace:</strong> {t('soc.architecture.loganalytics')}</li>
+                                <li><strong>Microsoft Sentinel:</strong> {t('soc.architecture.sentinel')}</li>
+                                <li><strong>PowerShell Scripts:</strong> {t('soc.architecture.powershell')}</li>
+                                <li><strong>KQL Queries:</strong> {t('soc.architecture.kql')}</li>
                             </ul>
                         </div>
 
                         <div className="detail-section">
-                            <h3>⚙️ Detailed Implementation Process</h3>
+                            <h3>{t('soc.implementation.title')}</h3>
                             <div className="implementation-steps">
                                 <div className="step">
-                                    <h4>Phase 1: Azure Infrastructure Setup</h4>
-                                    <p><strong>Duration:</strong> 15 minutes</p>
+                                    <h4>{t('soc.phase1.title')}</h4>
+                                    <p><strong>{t('soc.phase1.duration')}</strong></p>
                                     <ul>
-                                        <li>Created free Azure subscription with $200 credit</li>
-                                        <li>Established Resource Group "RG-SOC-Lab" in East US 2</li>
-                                        <li>Deployed Virtual Network (10.0.0.0/16) with default subnet</li>
-                                        <li>Configured network security group with custom "DANGER_ALLOW_ALL" rule</li>
+                                        <li>{t('soc.phase1.1')}</li>
+                                        <li>{t('soc.phase1.2')}</li>
+                                        <li>{t('soc.phase1.3')}</li>
+                                        <li>{t('soc.phase1.4')}</li>
                                     </ul>
                                 </div>
                                 <div className="step">
-                                    <h4>Phase 2: Honeypot VM Configuration</h4>
-                                    <p><strong>Duration:</strong> 20 minutes</p>
+                                    <h4>{t('soc.phase2.title')}</h4>
+                                    <p><strong>{t('soc.phase2.duration')}</strong></p>
                                     <ul>
-                                        <li>Deployed Windows 10 VM (Standard_DS2_v3) with public IP</li>
-                                        <li>Disabled Windows Defender Firewall across all profiles</li>
-                                        <li>Opened RDP port 3389 to 0.0.0.0/0 (any source)</li>
-                                        <li>Created local admin account with weak credentials for testing</li>
-                                        <li>Verified external connectivity via ping tests</li>
+                                        <li>{t('soc.phase2.1')}</li>
+                                        <li>{t('soc.phase2.2')}</li>
+                                        <li>{t('soc.phase2.3')}</li>
+                                        <li>{t('soc.phase2.4')}</li>
+                                        <li>{t('soc.phase2.5')}</li>
                                     </ul>
                                 </div>
                                 <div className="step">
-                                    <h4>Phase 3: Centralized Logging Implementation</h4>
-                                    <p><strong>Duration:</strong> 25 minutes</p>
+                                    <h4>{t('soc.phase3.title')}</h4>
+                                    <p><strong>{t('soc.phase3.duration')}</strong></p>
                                     <ul>
-                                        <li>Created Log Analytics Workspace "LAW-SOC-Lab"</li>
-                                        <li>Installed Azure Monitor Agent extension on VM</li>
-                                        <li>Configured Data Collection Rule (DCR) for Windows Security Events</li>
-                                        <li>Verified log ingestion with KQL queries (security event table)</li>
+                                        <li>{t('soc.phase3.1')}</li>
+                                        <li>{t('soc.phase3.2')}</li>
+                                        <li>{t('soc.phase3.3')}</li>
+                                        <li>{t('soc.phase3.4')}</li>
                                     </ul>
                                 </div>
                                 <div className="step">
-                                    <h4>Phase 4: SIEM Integration & Enhancement</h4>
-                                    <p><strong>Duration:</strong> 30 minutes</p>
+                                    <h4>{t('soc.phase4.title')}</h4>
+                                    <p><strong>{t('soc.phase4.duration')}</strong></p>
                                     <ul>
-                                        <li>Deployed Microsoft Sentinel (31-day free trial)</li>
-                                        <li>Connected Sentinel to Log Analytics Workspace</li>
-                                        <li>Installed Windows Security Events connector</li>
-                                        <li>Created geolocation watchlist with 55,000+ IP-to-location mappings</li>
+                                        <li>{t('soc.phase4.1')}</li>
+                                        <li>{t('soc.phase4.2')}</li>
+                                        <li>{t('soc.phase4.3')}</li>
+                                        <li>{t('soc.phase4.4')}</li>
                                     </ul>
                                 </div>
                                 <div className="step">
-                                    <h4>Phase 5: Threat Visualization & Analysis</h4>
-                                    <p><strong>Duration:</strong> 45 minutes</p>
+                                    <h4>{t('soc.phase5.title')}</h4>
+                                    <p><strong>{t('soc.phase5.duration')}</strong></p>
                                     <ul>
-                                        <li>Developed custom KQL queries for failed authentication analysis</li>
-                                        <li>Created interactive world map workbook in Sentinel</li>
-                                        <li>Implemented automatic IP geolocation lookup using watchlist joins</li>
-                                        <li>Configured real-time attack visualization with color-coded threat levels</li>
+                                        <li>{t('soc.phase5.1')}</li>
+                                        <li>{t('soc.phase5.2')}</li>
+                                        <li>{t('soc.phase5.3')}</li>
+                                        <li>{t('soc.phase5.4')}</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
                         <div className="detail-section">
-                            <h3>🔍 Advanced KQL Queries & Analysis</h3>
+                            <h3>{t('soc.kql.title')}</h3>
                             <div className="code-snippet">
-                                <h4>Failed Authentication Analysis Query:</h4>
+                                <h4>{t('soc.kql.failed.title')}</h4>
                                 <pre>
 {`// Query to analyze failed RDP attempts with geolocation
 SecurityEvent
@@ -163,7 +162,7 @@ SecurityEvent
                                 </pre>
                             </div>
                             <div className="code-snippet">
-                                <h4>Attack Pattern Analysis:</h4>
+                                <h4>{t('soc.kql.attack.title')}</h4>
                                 <pre>
 {`// Identify top attacking countries and their methods
 SecurityEvent
@@ -181,58 +180,58 @@ SecurityEvent
                         </div>
 
                         <div className="detail-section">
-                            <h3>📊 Comprehensive Attack Analysis Results</h3>
+                            <h3>{t('soc.analysis.title')}</h3>
                             <div className="findings-grid">
                                 <div className="finding-category">
-                                    <h4>Volume & Velocity</h4>
+                                    <h4>{t('soc.findings.volume.title')}</h4>
                                     <ul>
-                                        <li><strong>Total Failed Attempts:</strong> 52,000+ in first 24 hours</li>
-                                        <li><strong>Peak Attack Rate:</strong> 400 attempts/minute</li>
-                                        <li><strong>Average Session Duration:</strong> 2-3 minutes per attacker</li>
-                                        <li><strong>Discovery Time:</strong> VM found within 5 minutes of deployment</li>
+                                        <li><strong>{t('soc.findings.volume.1')}</strong></li>
+                                        <li><strong>{t('soc.findings.volume.2')}</strong></li>
+                                        <li><strong>{t('soc.findings.volume.3')}</strong></li>
+                                        <li><strong>{t('soc.findings.volume.4')}</strong></li>
                                     </ul>
                                 </div>
                                 <div className="finding-category">
-                                    <h4>Geographic Distribution</h4>
+                                    <h4>{t('soc.findings.geo.title')}</h4>
                                     <ul>
-                                        <li><strong>Primary Sources:</strong> Poland (26K), Belgium (13.3K), Brazil (13.3K)</li>
-                                        <li><strong>Total Countries:</strong> 15+ countries represented</li>
-                                        <li><strong>Attack Concentration:</strong> 70% from Eastern Europe/South America</li>
-                                        <li><strong>Time Zones:</strong> 24/7 continuous attacks across all time zones</li>
+                                        <li><strong>{t('soc.findings.geo.1')}</strong></li>
+                                        <li><strong>{t('soc.findings.geo.2')}</strong></li>
+                                        <li><strong>{t('soc.findings.geo.3')}</strong></li>
+                                        <li><strong>{t('soc.findings.geo.4')}</strong></li>
                                     </ul>
                                 </div>
                                 <div className="finding-category">
-                                    <h4>Attack Methodologies</h4>
+                                    <h4>{t('soc.findings.methods.title')}</h4>
                                     <ul>
-                                        <li><strong>Protocol:</strong> 100% RDP brute force (port 3389)</li>
-                                        <li><strong>Top Usernames:</strong> admin (35%), administrator (25%), user (15%)</li>
-                                        <li><strong>Password Patterns:</strong> Dictionary attacks, common passwords</li>
-                                        <li><strong>Automation Level:</strong> 95%+ automated bot traffic</li>
+                                        <li><strong>{t('soc.findings.methods.1')}</strong></li>
+                                        <li><strong>{t('soc.findings.methods.2')}</strong></li>
+                                        <li><strong>{t('soc.findings.methods.3')}</strong></li>
+                                        <li><strong>{t('soc.findings.methods.4')}</strong></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
                         <div className="detail-section">
-                            <h3>🛡️ Security Insights & Lessons Learned</h3>
+                            <h3>{t('soc.insights.title')}</h3>
                             <ul>
-                                <li><strong>Internet Exposure Risk:</strong> Any internet-facing system is discovered within minutes</li>
-                                <li><strong>Attack Automation:</strong> Modern threats are highly automated and persistent</li>
-                                <li><strong>Global Threat Landscape:</strong> Attacks originate from diverse geographic locations</li>
-                                <li><strong>Default Credential Risk:</strong> Common usernames are targeted immediately</li>
-                                <li><strong>Monitoring Necessity:</strong> Real-time logging and alerting are critical for detection</li>
-                                <li><strong>Defense in Depth:</strong> Multiple security layers needed (network + host firewalls)</li>
+                                <li><strong>{t('soc.insights.1')}</strong></li>
+                                <li><strong>{t('soc.insights.2')}</strong></li>
+                                <li><strong>{t('soc.insights.3')}</strong></li>
+                                <li><strong>{t('soc.insights.4')}</strong></li>
+                                <li><strong>{t('soc.insights.5')}</strong></li>
+                                <li><strong>{t('soc.insights.6')}</strong></li>
                             </ul>
                         </div>
 
                         <div className="detail-section">
-                            <h3>💰 Cost Management & Optimization</h3>
+                            <h3>{t('soc.cost.title')}</h3>
                             <ul>
-                                <li><strong>VM Cost:</strong> Standard_DS2_v3 at ~$70/month (turned off after lab)</li>
-                                <li><strong>Log Analytics:</strong> First 5GB/day free, then pay-per-GB ingested</li>
-                                <li><strong>Sentinel:</strong> 31-day free trial, then ~$2/GB after trial</li>
-                                <li><strong>Total Lab Cost:</strong> Under $5 for 24-hour experiment</li>
-                                <li><strong>Cost Control:</strong> Implemented automatic VM shutdown at 3 AM</li>
+                                <li><strong>{t('soc.cost.1')}</strong></li>
+                                <li><strong>{t('soc.cost.2')}</strong></li>
+                                <li><strong>{t('soc.cost.3')}</strong></li>
+                                <li><strong>{t('soc.cost.4')}</strong></li>
+                                <li><strong>{t('soc.cost.5')}</strong></li>
                             </ul>
                         </div>
                     </div>
