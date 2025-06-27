@@ -41,11 +41,11 @@ const translations = {
     'exp.sfr.description': 'Symfony Web Development, Git, bash scripting',
     'exp.imsa.title': 'Web Developer / Network Technician Intern',
     'exp.imsa.company': 'iMSA, Bobigny',
-    'exp.imsa.description': 'Frontend Development, Backend Development, User Experience, Cisco Catalyst switches Configuration',
+    'exp.imsa.description': 'Frontend Development, Backend Development, Cisco Catalyst switches Configuration',
     
     // Formation entries
     'form.uwtsd.title': 'MSc Cybersecurity and Digital Forensics',
-    'form.uwtsd.school': 'UWTSD, Swansea',
+    'form.uwtsd.school': 'UWTSD, Swansea UK',
     'form.uwtsd.description': 'Ethical Hacking, Digital Forensics, Incident Response',
     'form.isep.title': 'Master\'s in Cybersecurity Engineering',
     'form.isep.school': 'ISEP, Paris',
@@ -55,7 +55,7 @@ const translations = {
     'form.cpge.description': 'Mathematics, Physics, Mechanics, Electronics, French & English',
     'form.dut.title': 'Associate Degree in Computer Science & IT',
     'form.dut.school': 'Université Sorbonnes Paris Nord',
-    'form.dut.description': 'Programming (Python, Java), Web Development, Network Administration & Configuration',
+    'form.dut.description': 'Programming (Python, Java), Web Development, Network Administration & Configuration, Graph Theory',
     
     // Projects
     'projects.title': 'Personal Projects',
@@ -291,18 +291,18 @@ const translations = {
     'timeline.formation': 'Formation',
     
     // Experience entries
-    'exp.sfr.title': 'Ingénieur Logiciel (Apprentissage)',
+    'exp.sfr.title': 'Software Engineer (Apprentissage)',
     'exp.sfr.company': 'SFR, Paris XV',
     'exp.sfr.description': 'Développement Web Symfony, Git, scripts bash',
     'exp.imsa.title': 'Stage Développeur Web / Technicien Réseau',
     'exp.imsa.company': 'iMSA, Bobigny',
-    'exp.imsa.description': 'Développement Frontend, Développement Backend, Expérience Utilisateur, Configuration de commutateurs Cisco Catalyst',
+    'exp.imsa.description': 'Développement Frontend, Développement Backend, Configuration de commutateurs Cisco Catalyst',
     
     // Formation entries
-    'form.uwtsd.title': 'MSc Cybersécurité et Investigation Numérique',
-    'form.uwtsd.school': 'UWTSD, Swansea',
-    'form.uwtsd.description': 'Piratage Éthique, Investigation Numérique, Réponse aux Incidents',
-    'form.isep.title': 'Master en Ingénierie Cybersécurité',
+    'form.uwtsd.title': 'MSc Cybersecurity and Digital Forensics',
+    'form.uwtsd.school': 'UWTSD, Swansea UK',
+    'form.uwtsd.description': 'Ethical Hacking, Digital Forensics, Réponse aux Incidents',
+    'form.isep.title': 'Diplome Ingénieur Informatique spécialité Cybersécurité',
     'form.isep.school': 'ISEP, Paris',
     'form.isep.description': 'Routage Réseau, Cybersécurité, Gestion des Risques & Audit, Virtualisation, Big Data',
     'form.cpge.title': 'CPGE ATS',
@@ -310,7 +310,7 @@ const translations = {
     'form.cpge.description': 'Mathématiques, Physique, Mécanique, Électronique, Français & Anglais',
     'form.dut.title': 'DUT Informatique',
     'form.dut.school': 'Université Sorbonnes Paris Nord',
-    'form.dut.description': 'Programmation (Python, Java), Développement Web, Administration & Configuration Réseau',
+    'form.dut.description': 'Programmation (Python, Java), Développement Web, Administration & Configuration Réseau, Théorie des Graphes',
     
     // Projects
     'projects.title': 'Projets Personnels',
@@ -332,7 +332,7 @@ const translations = {
     'soc.backButton': '← Retour aux Projets',
     'soc.title': 'SOC Azure avec Surveillance d\'Attaques en Temps Réel',
     'soc.overview.title': '🛡️ Aperçu du Projet',
-    'soc.overview.description': 'Construction d\'un Centre d\'Opérations de Sécurité entièrement fonctionnel depuis zéro en utilisant Microsoft Azure. Ce projet pratique de cybersécurité démontre les capacités de détection de menaces en temps réel en créant une VM Windows 10 honeypot intentionnellement vulnérable qui a attiré plus de 26 000+ tentatives de connexion échouées d\'attaquants du monde entier en 24 heures. Le projet présente l\'implémentation SIEM de bout en bout, l\'analyse de logs et la visualisation géospatiale des menaces avec des outils de sécurité de niveau entreprise.',
+    'soc.overview.description': 'Construction d\'un SOC entièrement fonctionnel en utilisant Microsoft Azure. Ce projet de cybersécurité démontre des capacités de détection de menaces en temps réel en créant une VM Windows 10 honeypot intentionnellement vulnérable qui a attiré plus de 26 000+ tentatives de connexion échouées d\'attaquants du monde entier en 24 heures. Le projet présente l\'implémentation SIEM de bout en bout, l\'analyse de logs et la visualisation géospatiale des menaces.',
     'soc.objectives.title': '🎯 Objectifs du Projet',
     'soc.objectives.1': 'Créer une VM vulnérable comme honeypot pour attirer de vraies attaques',
     'soc.objectives.2': 'Mettre en place une infrastructure centralisée de logging et monitoring',
@@ -344,8 +344,8 @@ const translations = {
     'soc.stats.2': 'Répartition Géographique : 13 300+ tentatives de Belgique, 13 300+ d\'Amérique du Sud',
     'soc.stats.3': 'Vitesse de Découverte : VM découverte et attaquée en quelques minutes après déploiement',
     'soc.stats.4': 'Taux d\'Attaque : 400+ tentatives par minute durant l\'activité de pointe',
-    'soc.stats.5': 'Vecteurs d\'Attaque Communs : Force brute RDP (Event ID 4625)',
-    'soc.stats.6': 'Noms d\'utilisateur des Attaquants : admin, administrator, user, employee (les plus communs)',
+    'soc.stats.5': 'Vecteurs d\'Attaque Communs : Brute force RDP (Event ID 4625)',
+    'soc.stats.6': 'Noms d\'utilisateur les plus communs (utilisés par les attaquants) : admin, administrator, user, employee',
     'soc.architecture.title': '🔧 Architecture & Configuration',
     'soc.implementation.title': '⚙️ Processus d\'Implémentation Détaillé',
     'soc.kql.title': '🔍 Requêtes KQL Avancées & Analyse',
@@ -354,11 +354,11 @@ const translations = {
     'soc.cost.title': '💰 Gestion & Optimisation des Coûts',
     
     // SOC Architecture Details
-    'soc.architecture.azurevm': 'VM Azure : Machine virtuelle Windows 10 exposée à internet',
-    'soc.architecture.honeypot': 'Configuration Honeypot : Pare-feu désactivé, RDP activé',
-    'soc.architecture.loganalytics': 'Espace de Travail Log Analytics : Point de collecte central des logs',
-    'soc.architecture.sentinel': 'Microsoft Sentinel : Solution SIEM cloud-native',
-    'soc.architecture.powershell': 'Scripts PowerShell : Analyse de logs personnalisée et géolocalisation',
+    'soc.architecture.azurevm': 'Machine virtuelle Windows 10 exposée à internet',
+    'soc.architecture.honeypot': 'Pare-feu désactivé, RDP activé',
+    'soc.architecture.loganalytics': 'Point de collecte central des logs',
+    'soc.architecture.sentinel': 'Solution SIEM cloud-native',
+    'soc.architecture.powershell': 'Analyse de logs personnalisée et géolocalisation',
     'soc.architecture.kql': 'Requêtes KQL : Chasse aux menaces et analyse avancées',
     
     // SOC Implementation Phases

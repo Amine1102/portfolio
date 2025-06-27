@@ -84,37 +84,6 @@ function Project() {
                         </button>
                     </button>
                 </div>
-
-                {/* Keep your other existing projects */}
-                <div className="project">
-                    <img src={mock05} className="zoom" alt="thumbnail" width="100%" />
-                    <h2>Movie App</h2>
-                    <p>Designed and coded a ReactJS movie application. Users can search for specific movies, add movies to their favorites list and view movie information and movie trailers.</p>
-                </div>
-
-                <div className="project">
-                    <img src={mock06} className="zoom" alt="thumbnail" width="100%" />
-                    <h2>Bell Canada Network Management Web Application</h2>
-                    <p>Designed and coded a ReactJS web application for viewing and editing charts, visualizing network data, and managing equipment and devices for Bell Canada.</p>
-                </div>
-
-                <div className="project">
-                    <img src={mock07} className="zoom" alt="thumbnail" width="100%" />
-                    <h2>Poker Project</h2>
-                    <p>Designed and coded a C++ project that determines which poker player wins a round.</p>
-                </div>
-
-                <div className="project">
-                    <img src={mock08} className="zoom" alt="thumbnail" width="100%" />
-                    <h2>Databasing Project</h2>
-                    <p>Designed and coded a MySQL practice database to store and retrieve data.</p>
-                </div>
-
-                <div className="project">
-                    <img src={mock09} className="zoom" alt="thumbnail" width="100%" />
-                    <h2>Speedrun Tracker Tool</h2>
-                    <p>Designed and coded a C# application that tracks race times on a daily basis, analyzes average time, and compares times with history.</p>
-                </div>
             </div>
         </div>
     );

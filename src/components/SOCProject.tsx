@@ -53,7 +53,6 @@ function SOCProject({ onBack }: { onBack?: () => void }) {
                                 <li>{t('soc.objectives.2')}</li>
                                 <li>{t('soc.objectives.3')}</li>
                                 <li>{t('soc.objectives.4')}</li>
-                                <li>{t('soc.objectives.5')}</li>
                             </ul>
                         </div>
 

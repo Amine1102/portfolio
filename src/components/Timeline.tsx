@@ -83,7 +83,7 @@ function Timeline() {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--education"
-            date="209/2019 - 06/2021"
+            date="09/2019 - 06/2021"
             iconStyle={{ background: '#e74c3c', color: '#fff' }}
             icon={<FontAwesomeIcon icon={faGraduationCap} />}
           >
