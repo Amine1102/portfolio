@@ -35,14 +35,14 @@ label {
 }
 
 .form-flex .MuiFormControl-root {
-  width: 100%;
+  flex: 1;
 }
 
-form {
+.contact-form form {
   width: 100% !important;
 }
 
-.body-form {
+.contact-form .body-form {
   width: 100% !important;
   margin-bottom: 15px !important;
 }

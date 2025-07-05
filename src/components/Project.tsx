@@ -6,6 +6,7 @@ import mock07 from '../assets/images/mock07.png';
 import mock08 from '../assets/images/mock08.png';
 import mock09 from '../assets/images/mock09.png';
 import mock10 from '../assets/images/mock10.png';
+import map24h from '../assets/images/MapAfter24h.png';
 import hackthebox from '../assets/images/hackthebox.png';
 import '../assets/styles/Project.scss';
 import SOCProject from './SOCProject';
@@ -29,7 +30,6 @@ function Project() {
         return <SOCProject onBack={handleBackToProjects} />;
     }
 
-    // Add this condition for HTB
     if (selectedProject === 'htb') {
         return <HTBCertifications onBack={handleBackToProjects} />;
     }
@@ -45,7 +45,7 @@ function Project() {
                         className="project-button"
                         onClick={() => handleProjectClick('soc')}
                     >
-                        <img src={mock10} className="zoom" alt="thumbnail" width="100%" />
+                        <img src={map24h} className="zoom" alt="thumbnail" width="100%" />
                         <button 
                             className="project-title-button"
                             onClick={() => handleProjectClick('soc')}

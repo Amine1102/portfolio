@@ -20,7 +20,7 @@ function Main() {
             <a href="https://www.linkedin.com/in/amine-laimeche/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
           </div>
           <h1>Amine Laimeche</h1>
-          <p>Cybersecurity Engineer</p>
+          <p>Junior Cybersecurity Engineer</p>
 
           <div className="mobile_social_icons">
             <a href="https://github.com/amine1102" target="_blank" rel="noreferrer"><GitHubIcon/></a>

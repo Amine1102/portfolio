@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import '../assets/styles/Contact.scss';
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
@@ -27,28 +27,28 @@ function Contact() {
     setEmailError(email === '');
     setMessageError(message === '');
 
-    /* Uncomment below if you want to enable the emailJS */
+    /* emailJS */
 
-    // if (name !== '' && email !== '' && message !== '') {
-    //   var templateParams = {
-    //     name: name,
-    //     email: email,
-    //     message: message
-    //   };
+    if (name !== '' && email !== '' && message !== '') {
+     var templateParams = {
+     name: name,
+     email: email,
+     message: message
+   };
 
-    //   console.log(templateParams);
-    //   emailjs.send('service_id', 'template_id', templateParams, 'api_key').then(
-    //     (response) => {
-    //       console.log('SUCCESS!', response.status, response.text);
-    //     },
-    //     (error) => {
-    //       console.log('FAILED...', error);
-    //     },
-    //   );
-    //   setName('');
-    //   setEmail('');
-    //   setMessage('');
-    // }
+   console.log(templateParams);
+   emailjs.send('service_l6j5xvt', 'template_9ukxn9s', templateParams, '9nJrezdvofbcxpfxL').then(
+     (response) => {
+       console.log('SUCCESS!', response.status, response.text);
+     },
+     (error) => {
+       console.log('FAILED...', error);
+     },
+   );
+   setName('');
+   setEmail('');
+   setMessage('');
+ }
   };
 
   return (
@@ -65,46 +65,46 @@ function Contact() {
             className='contact-form'
           >
             <div className='form-flex'>
-              <TextField
-                required
-                id="outlined-required"
-                label="Your Name"
-                placeholder="What's your name?"
-                value={name}
+              <div>
+                <label>Your Name</label>
+                <input 
+                  type="text"
+                  value={name}
+                  onChange={(e) => {
+                    console.log('Name changing to:', e.target.value);
+                    setName(e.target.value);
+                  }}
+                  placeholder="What's your name?"
+                  style={{width: '100%', padding: '10px', margin: '5px 0'}}
+                />
+              </div>
+              <div>
+                <label>Email / Phone</label>
+                <input 
+                  type="text"
+                  value={email}
+                  onChange={(e) => {
+                    console.log('Email changing to:', e.target.value);
+                    setEmail(e.target.value);
+                  }}
+                  placeholder="How can I reach you?"
+                  style={{width: '100%', padding: '10px', margin: '5px 0'}}
+                />
+              </div>
+            </div>
+            <div>
+              <label>Message</label>
+              <textarea
+                value={message}
                 onChange={(e) => {
-                  setName(e.target.value);
+                  console.log('Message changing to:', e.target.value);
+                  setMessage(e.target.value);
                 }}
-                error={nameError}
-                helperText={nameError ? "Please enter your name" : ""}
-              />
-              <TextField
-                required
-                id="outlined-required"
-                label="Email / Phone"
-                placeholder="How can I reach you?"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-                error={emailError}
-                helperText={emailError ? "Please enter your email or phone number" : ""}
+                placeholder="Send me any inquiries or questions"
+                rows={10}
+                style={{width: '100%', padding: '10px', margin: '5px 0'}}
               />
             </div>
-            <TextField
-              required
-              id="outlined-multiline-static"
-              label="Message"
-              placeholder="Send me any inquiries or questions"
-              multiline
-              rows={10}
-              className="body-form"
-              value={message}
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
-              error={messageError}
-              helperText={messageError ? "Please enter the message" : ""}
-            />
             <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
               Send
             </Button>

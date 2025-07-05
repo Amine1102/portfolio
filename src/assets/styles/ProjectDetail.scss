@@ -153,8 +153,12 @@
             
             .tech-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-template-columns: 1fr 1fr 1fr;
                 gap: 1.5rem;
+                
+                @media (max-width: 768px) {
+                    grid-template-columns: 1fr;
+                }
                 
                 .tech-category {
                     background: #f8f9fa;
@@ -240,21 +244,73 @@
 
 .certification-item {
     background: #f8f9fa;
-    border-left: 4px solid #007bff;
     padding: 1.5rem;
-    margin: 1rem 0;
-    border-radius: 0 8px 8px 0;
+    border-radius: 10px;
+    border-left: 4px solid #0078d4;
+    margin-bottom: 1.5rem;
     
-    h4 {
-        color: #007bff;
-        margin-bottom: 0.5rem;
+    // Améliorer la visibilité du texte "Focus Areas:"
+    p strong {
+        color: #0078d4 !important;
+        font-weight: 700;
+        font-size: 1rem;
     }
     
-    p {
-        margin: 0.5rem 0;
+    // Utiliser le même style que .detail-section ul li
+    ul {
+        list-style: none;
+        padding: 0;
         
-        strong {
-            color: #333;
+        li {
+            background: #f8f9fa;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #0078d4;
+            color: #555;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                background: #e9ecef;
+                transform: translateX(5px);
+            }
+            
+            strong {
+                color: #333;
+            }
+        }
+    }
+    
+    .certification-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        
+        .certification-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: white;
+            padding: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        div {
+            flex: 1;
+            
+            h4 {
+                margin: 0 0 0.5rem 0;
+                color: #0078d4;
+                font-size: 1.2rem;
+            }
+            
+            p {
+                margin: 0;
+                color: #555;
+                font-size: 0.9rem;
+            }
         }
     }
 }
@@ -288,6 +344,151 @@
             
             strong {
                 color: #007bff;
+            }
+        }
+    }
+}
+
+// Dark mode support pour les certifications
+.dark-mode .certification-item {
+    background: #2d3748;
+    border-left-color: #4299e1;
+    
+    p strong {
+        color: #4299e1 !important;
+    }
+    
+    ul li {
+        background: #2d3748 !important;
+        color: #a0aec0 !important;
+        border-left-color: #4299e1;
+        
+        &:hover {
+            background: #1a202c !important;
+        }
+    }
+    
+    .certification-header {
+        div {
+            h4 {
+                color: #4299e1;
+            }
+            
+            p {
+                color: #a0aec0;
+            }
+        }
+    }
+}
+
+// Dark mode support pour tout le contenu des projets
+.dark-mode .project-detail-container {
+    color: #e2e8f0;
+    
+    h1, h2, h3, h4 {
+        color: #f7fafc !important;
+    }
+    
+    p {
+        color: #cbd5e0 !important;
+    }
+    
+    ul li {
+        color: #a0aec0;
+    }
+    
+    .project-overview {
+        h2 {
+            color: #4299e1 !important;
+            border-bottom-color: #4299e1;
+        }
+        
+        p {
+            color: #cbd5e0 !important;
+        }
+    }
+    
+    .detail-section {
+        h3 {
+            color: #4299e1 !important;
+        }
+        
+        p {
+            color: #cbd5e0 !important;
+        }
+        
+        ul li {
+            color: #a0aec0 !important;
+        }
+    }
+    
+    .tech-category {
+        background: #2d3748 !important;
+        border-top-color: #4299e1;
+        
+        h4 {
+            color: #4299e1 !important;
+        }
+        
+        ul li {
+            background: #1a202c !important;
+            color: #e2e8f0 !important;
+            border-left-color: #48bb78;
+        }
+    }
+    
+    // Améliorer la visibilité des listes dans toutes les sections
+    .detail-section ul li {
+        background: #2d3748 !important;
+        color: #e2e8f0 !important;
+        border-left-color: #4299e1;
+        
+        &:hover {
+            background: #1a202c !important;
+        }
+        
+        strong {
+            color: #4299e1 !important;
+        }
+    }
+    
+    .implementation-steps .step {
+        background: #2d3748 !important;
+        border-left-color: #4299e1;
+        
+        h4 {
+            color: #4299e1 !important;
+        }
+        
+        p {
+            color: #cbd5e0 !important;
+        }
+        
+        ul li {
+            background: #1a202c !important;
+            color: #e2e8f0 !important;
+            border-left-color: #4299e1;
+        }
+    }
+    
+    .findings-grid, .achievement-category {
+        .finding-category, .achievement-category {
+            background: #2d3748 !important;
+            border-color: #4a5568;
+            
+            h4 {
+                color: #4299e1 !important;
+                border-bottom-color: #4299e1;
+            }
+            
+            ul li {
+                background: none !important;
+                color: #e2e8f0 !important;
+                border: none !important;
+                
+                strong {
+                    color: #4299e1 !important;
+                }
             }
         }
     }

@@ -6,9 +6,6 @@ import Chip from '@mui/material/Chip';
 import { useLanguage } from '../contexts/LanguageContext';
 import '../assets/styles/Expertise.scss';
 
-// Expertise component to showcase skills and technologies used
-// It includes three main sections with icons, titles, descriptions, and technology labels
-
 const labelsFirst = [
     "Azure Sentinel",
     "SIEM",
@@ -29,6 +26,7 @@ const labelsSecond = [
     "Python",
     "Java",
     "JavaScript",
+    "Typescript",
     "HTML/CSS",
     "Git",
     "Bash",

@@ -1,6 +1,8 @@
 import React from "react";
 import { useLanguage } from '../contexts/LanguageContext';
 import '../assets/styles/ProjectDetail.scss';
+import cbbhLogo from '../assets/images/cbbh-logo.png';
+import cdsaLogo from '../assets/images/cdsa-logo.png';
 
 function HTBCertifications({ onBack }: { onBack?: () => void }) {
     const { t } = useLanguage();
@@ -45,8 +47,13 @@ function HTBCertifications({ onBack }: { onBack?: () => void }) {
                             <h3>{t('htb.certifications.title')}</h3>
                             
                             <div className="certification-item">
-                                <h4>{t('htb.cbbh.title')}</h4>
-                                <p><strong>{t('htb.cbbh.status')}</strong></p>
+                                <div className="certification-header">
+                                    <img src={cbbhLogo} alt="CBBH Logo" className="certification-logo" />
+                                    <div>
+                                        <h4>{t('htb.cbbh.title')}</h4>
+                                        <p><strong>{t('htb.cbbh.status')}</strong></p>
+                                    </div>
+                                </div>
                                 <p><strong>{t('htb.cbbh.focus')}</strong></p>
                                 <ul>
                                     <li>{t('htb.cbbh.skill.1')}</li>
@@ -61,8 +68,13 @@ function HTBCertifications({ onBack }: { onBack?: () => void }) {
                             </div>
 
                             <div className="certification-item">
-                                <h4>{t('htb.cdsa.title')}</h4>
-                                <p><strong>{t('htb.cdsa.status')}</strong></p>
+                                <div className="certification-header">
+                                    <img src={cdsaLogo} alt="CDSA Logo" className="certification-logo" />
+                                    <div>
+                                        <h4>{t('htb.cdsa.title')}</h4>
+                                        <p><strong>{t('htb.cdsa.status')}</strong></p>
+                                    </div>
+                                </div>
                                 <p><strong>{t('htb.cdsa.focus')}</strong></p>
                                 <ul>
                                     <li>{t('htb.cdsa.skill.1')}</li>
@@ -74,39 +86,6 @@ function HTBCertifications({ onBack }: { onBack?: () => void }) {
                                     <li>{t('htb.cdsa.skill.7')}</li>
                                     <li>{t('htb.cdsa.skill.8')}</li>
                                 </ul>
-                            </div>
-                        </div>
-
-                        <div className="detail-section">
-                            <h3>{t('htb.achievements.title')}</h3>
-                            <div className="achievements-grid">
-                                <div className="achievement-category">
-                                    <h4>{t('htb.machines.title')}</h4>
-                                    <ul>
-                                        <li><strong>{t('htb.machines.easy')}</strong></li>
-                                        <li><strong>{t('htb.machines.medium')}</strong></li>
-                                        <li><strong>{t('htb.machines.hard')}</strong></li>
-                                        <li><strong>{t('htb.machines.insane')}</strong></li>
-                                    </ul>
-                                </div>
-                                <div className="achievement-category">
-                                    <h4>{t('htb.skill.title')}</h4>
-                                    <ul>
-                                        <li><strong>{t('htb.skill.rank')}</strong></li>
-                                        <li><strong>{t('htb.skill.points')}</strong></li>
-                                        <li><strong>{t('htb.skill.badges')}</strong></li>
-                                        <li><strong>{t('htb.skill.active')}</strong></li>
-                                    </ul>
-                                </div>
-                                <div className="achievement-category">
-                                    <h4>{t('htb.tracks.title')}</h4>
-                                    <ul>
-                                        <li>{t('htb.tracks.1')}</li>
-                                        <li>{t('htb.tracks.2')}</li>
-                                        <li>{t('htb.tracks.3')}</li>
-                                        <li>{t('htb.tracks.4')}</li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
 
@@ -158,25 +137,12 @@ function HTBCertifications({ onBack }: { onBack?: () => void }) {
                             </ul>
                         </div>
 
-                        <div className="detail-section">
-                            <h3>{t('htb.integration.title')}</h3>
-                            <p>
-                                {t('htb.integration.text')}
-                            </p>
-                        </div>
                     </div>
 
                     <div className="project-links">
+            
                         <a 
-                            href="https://app.hackthebox.com/profile/[your-profile-id]" 
-                            target="_blank" 
-                            rel="noreferrer" 
-                            className="project-link-button"
-                        >
-                            👤 HTB Profile
-                        </a>
-                        <a 
-                            href="https://www.hackthebox.com/blog/intro-to-hack-the-box" 
+                            href="https://academy.hackthebox.com/faq" 
                             target="_blank" 
                             rel="noreferrer" 
                             className="project-link-button secondary"
