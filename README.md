@@ -5,6 +5,7 @@
 ## About
 
 Interactive portfolio built with React and TypeScript, highlighting my journey in cybersecurity through hands-on projects and practical experience. The portfolio demonstrates real-world security implementations, threat analysis, and defensive capabilities.
+- Visit the portfolio: https://amine1102.github.io/portfolio
 
 ## Featured Projects
 
@@ -59,10 +60,6 @@ npm install
 # Start development server
 npm start
 ```
-
-## Live Demo
-
-Visit the portfolio: [https://amine1102.github.io/portfolio]
 
 ## Contact
 
