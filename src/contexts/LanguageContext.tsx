@@ -59,6 +59,7 @@ const translations = {
     
     // Projects
     'projects.title': 'Personal Projects',
+    'projects.construction': '🚧 Site under construction - New projects will be added',
     'projects.viewDetails': 'View Details',
     'projects.soc.title': 'Azure SOC with Live Attack Monitoring',
     'projects.soc.description': 'Built a Security Operations Center in Azure with real-time attack visualization and SIEM integration.',
@@ -304,6 +305,7 @@ const translations = {
     
     // Projects
     'projects.title': 'Projets Personnels',
+    'projects.construction': '🚧 Site en construction - Nouveaux projets en cours d\'ajout',
     'projects.viewDetails': 'Voir Détails',
     'projects.soc.title': 'SOC Azure avec Surveillance d\'Attaques en Temps Réel',
     'projects.soc.description': 'Construction d\'un mini SOC dans Azure avec visualisation d\'attaques en temps réel et intégration SIEM.',

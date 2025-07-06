@@ -3,6 +3,23 @@
     flex-direction: column;
     padding: 5% 10%;
     text-align: left;
+
+    .construction-notice {
+        margin-bottom: 30px;
+        text-align: center;
+        
+        p {
+            font-size: 1em;
+            color: #ffa500;
+            background-color: rgba(255, 165, 0, 0.1);
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 4px solid #ffa500;
+            margin: 0;
+            font-style: italic;
+            display: inline-block;
+        }
+    }
 }
   
 .projects-container .projects-grid {
@@ -61,6 +78,13 @@
     &:hover {
         background: #0056b3;
     }
+}
+
+// Styles pour le mode sombre
+.dark-mode .projects-container .construction-notice p {
+    color: #ffb347;
+    background-color: rgba(255, 179, 71, 0.15);
+    border-left-color: #ffb347;
 }
 
 @media screen {

@@ -38,6 +38,11 @@ function Project() {
     return (
         <div className="projects-container" id="projects">
             <h1>{t('projects.title')}</h1>
+            
+            <div className="construction-notice">
+                <p>{t('projects.construction')}</p>
+            </div>
+            
             <div className="projects-grid">
                 {/* Existing SOC Project */}
                 <div className="project">
