@@ -1,6 +1,7 @@
 import React from "react";
 import map0h from '../assets/images/map0h.png';
 import Map from '../assets/images/MapAfter24h.png';
+import map48 from '../assets/images/MapAfter48h.png';
 import soc from '../assets/images/soc.png';
 import stat from '../assets/images/stats.png';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -39,6 +40,7 @@ function SOCProject({ onBack }: { onBack?: () => void }) {
                 <div className="project-image-section">
                     <img src={map0h} alt="Map 0H" className="project-detail-image" />
                     <img src={Map} alt="Maps after 24h" className="project-detail-image" />
+                    <img src={map48} alt="Map 48H" className="project-detail-image" />
                     <img src={soc} alt="SOC Project Architecture" className="project-detail-image" />
                     <img src={stat} alt="Statistics Overview" className="project-detail-image" />
                     <a 

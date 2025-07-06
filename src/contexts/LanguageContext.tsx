@@ -77,7 +77,7 @@ const translations = {
     'soc.backButton': '← Back to Projects',
     'soc.title': 'Azure Homelab SOC with Live Attack Monitoring',
     'soc.overview.title': 'Project Overview',
-    'soc.overview.description': 'Built a fully functional Security Operations Center from scratch using Microsoft Azure. This hands-on cybersecurity project demonstrates real-world threat detection capabilities by creating an intentionally vulnerable Windows 10 honeypot VM that attracted over 60 000 failed login attempts from attackers worldwide within 24 hours. The project showcases end-to-end SIEM implementation, log analysis, and geospatial threat visualization.',
+    'soc.overview.description': 'Built a fully functional Security Operations Center from scratch using Microsoft Azure. This hands-on cybersecurity project demonstrates real-world threat detection capabilities by creating an intentionally vulnerable Windows 10 honeypot VM that attracted over 60 000 failed login attempts from attackers worldwide within 24 hours. The project showcases end-to-end SIEM implementation, log analysis, and geospatial threat visualization. The first map shows the number of failed login attempts within the first hour, the second map shows the attacks after 24 hours, and the third map shows the attacks after 48 hours.',
     'soc.objectives.title': 'Project Objectives',
     'soc.objectives.1': 'Create a vulnerable windows 10 VM as a honeypot to attract real attacks',
     'soc.objectives.2': 'Set up centralized logging and monitoring infrastructure',
