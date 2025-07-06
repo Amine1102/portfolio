@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.0cea883a.css",
-    "main.js": "/portfolio/static/js/main.297a573a.js",
+    "main.css": "/portfolio/static/css/main.0bbc697d.css",
+    "main.js": "/portfolio/static/js/main.459180cc.js",
     "static/js/453.b05d8aa5.chunk.js": "/portfolio/static/js/453.b05d8aa5.chunk.js",
     "static/media/hackthebox.png": "/portfolio/static/media/hackthebox.a25f48d7c31fb03d3afd.png",
     "static/media/bg-light.png": "/portfolio/static/media/bg-light.bac0efb485244a522981.png",
@@ -9,17 +9,18 @@
     "static/media/soc.png": "/portfolio/static/media/soc.d638b2d719e100f22269.png",
     "static/media/cdsa-logo.png": "/portfolio/static/media/cdsa-logo.c4890fa41770e86b0636.png",
     "static/media/cbbh-logo.png": "/portfolio/static/media/cbbh-logo.7b6f3a3bbd88c55b215b.png",
+    "static/media/MapAfter48h.png": "/portfolio/static/media/MapAfter48h.f94366225adbd02b4bb5.png",
     "static/media/MapAfter24h.png": "/portfolio/static/media/MapAfter24h.d6f80eef537b9aa51acd.png",
     "static/media/map0h.png": "/portfolio/static/media/map0h.2ffee7dc03399cc40da8.png",
     "static/media/stats.png": "/portfolio/static/media/stats.3b2f2e493278ac9ae083.png",
     "static/media/moi.png": "/portfolio/static/media/moi.a658b9e3b59fac834389.png",
     "index.html": "/portfolio/index.html",
-    "main.0cea883a.css.map": "/portfolio/static/css/main.0cea883a.css.map",
-    "main.297a573a.js.map": "/portfolio/static/js/main.297a573a.js.map",
+    "main.0bbc697d.css.map": "/portfolio/static/css/main.0bbc697d.css.map",
+    "main.459180cc.js.map": "/portfolio/static/js/main.459180cc.js.map",
     "453.b05d8aa5.chunk.js.map": "/portfolio/static/js/453.b05d8aa5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0cea883a.css",
-    "static/js/main.297a573a.js"
+    "static/css/main.0bbc697d.css",
+    "static/js/main.459180cc.js"
   ]
 }
